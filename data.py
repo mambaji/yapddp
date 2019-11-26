@@ -1,49 +1,49 @@
 stock = [
     {
-        'account': '3311366400',
-        'uid': '4643836995694',
-        'token': 'BY62M63MU2AALX47K73746NYX4HEFNOF32UJB5BF7E5FMYYDJQFA1106ec1',
+        'account': '13804237248',
+        'uid': '8352485156270',
+        'token': '3FLTVIY7O2Z6U6RKNYLHKYGFHPEDCGKYZ6VDIJ6XMVEL6MBU4LUA111ae57',
     },
     {
-        'account': '3463751313',
-        'uid': '9499937673988',
-        'token': 'HCIEVYCG4ZFTH7WD4QH4D4KIVDD7PHVJLWJBEE3K7R6ZOW4UWQEA113043b',
+        'account': '13458191137',
+        'uid': '9246224067384',
+        'token': 'JHWRY5NPCQY7W46HCYVJBYXCL4M3VPD47BX5VHENXLHCUQZW4YMA113386c',
     },
     {
-        'account': '3467746696',
-        'uid': '4191883925912',
-        'token': 'QHUMBLXZ5RR3DDLNV5MS2NRAEP32FK6LT762SFBAMLCBY22Y6CLQ111983a',
-    },
-    {
-        'account': '3463912746',
-        'uid': '9456544795414',
-        'token': 'M72VBTPU6FMR4GK6JNPMYAZLB64BZHDDQYCWL3UJ2BSYTQ2K45ZQ1131613',
-    },
-    {
-        'account': '3545828564',
-        'uid': '1156691692227',
-        'token': 'DK7HOEIIS33SQTR2X37ZPCFACIG6DR2FHUPOX6BHLTUASQTR5SZA112c35d',
-    },
-    {
-        'account': '3464425772',
-        'uid': '9377524518004',
-        'token': 'O56FPDHFTBU5RI2X2C5DOJBQDWPNYHNLLUNTNO2O5MMJN2QKM7HQ11074bb',
-    },
-    {
-        'account': '3316323065',
-        'uid': '4417378315694',
-        'token': 'LI3RUQ52GUJUYE5TLTNSF4DF7YMORVLSV4ZU2BIOPZ6X7DDPTXYQ111ae4d',
-    },
-    {
-        'account': '3392422354',
-        'uid': '9759640287823',
-        'token': 'ZJGQCATEP5BER6B3AAS5FRRRV2ISKBAKVYSMU6FKEEE7PT5XBGTQ1124f9a',
-    },
-    {
-        'account': '3442760007',
-        'uid': '3256958112373',
-        'token': 'XGIDQYJKMMS2GKO373KD5WMH36WQTAGYEVTSNAKDEAQGCB6FI2OA1127535',
+        'account': '14789339785',
+        'uid': '1660492123924',
+        'token': 'RZN4HHHURRLRMFBZWVHDY5FAJW5NC4RUFF6OYNKHMBP7HE3FUU5A1131433',
     }
+    # {
+    #     'account': '3463912746',
+    #     'uid': '9456544795414',
+    #     'token': 'M72VBTPU6FMR4GK6JNPMYAZLB64BZHDDQYCWL3UJ2BSYTQ2K45ZQ1131613',
+    # },
+    # {
+    #     'account': '3545828564',
+    #     'uid': '1156691692227',
+    #     'token': 'DK7HOEIIS33SQTR2X37ZPCFACIG6DR2FHUPOX6BHLTUASQTR5SZA112c35d',
+    # },
+    # {
+    #     'account': '3464425772',
+    #     'uid': '9377524518004',
+    #     'token': 'O56FPDHFTBU5RI2X2C5DOJBQDWPNYHNLLUNTNO2O5MMJN2QKM7HQ11074bb',
+    # },
+    # {
+    #     'account': '3316323065',
+    #     'uid': '4417378315694',
+    #     'token': 'LI3RUQ52GUJUYE5TLTNSF4DF7YMORVLSV4ZU2BIOPZ6X7DDPTXYQ111ae4d',
+    # },
+    # {
+    #     'account': '3392422354',
+    #     'uid': '9759640287823',
+    #     'token': 'ZJGQCATEP5BER6B3AAS5FRRRV2ISKBAKVYSMU6FKEEE7PT5XBGTQ1124f9a',
+    # },
+    # {
+    #     'account': '3442760007',
+    #     'uid': '3256958112373',
+    #     'token': 'XGIDQYJKMMS2GKO373KD5WMH36WQTAGYEVTSNAKDEAQGCB6FI2OA1127535',
+    # }
 
 ]
 shop = [

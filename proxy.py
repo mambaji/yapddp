@@ -23,7 +23,7 @@ proxyMeta = "http://%(host)s:%(port)s" % {
 }
 
 proxies = {
-    "http": proxyMeta,
+    # "http": proxyMeta,
 }
 
 orderList = []
@@ -62,7 +62,7 @@ def on_prepay_request(order_sn, type):
             'paid_times': 0,
             'order_sn': order_sn,
             'pay_app_id': 9,
-            'return_url': 'https://mobile.yangkeduo.com/transac_wappay_callback.html?order_sn='+order_sn,
+            # 'return_url': 'https://mobile.yangkeduo.com/transac_wappay_callback.html?order_sn='+order_sn,
             'version': 3
         }
     headers = {
