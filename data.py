@@ -54,7 +54,13 @@ shop = [
         'cookie': 'api_uid=CiHAnV3Y2TJpcQBDDIccAg==; _nano_fp=Xpd8n0TbX5Xql0dbXT_Qjj5XmVPAbYbWr~Kpl0zw;'
     },
     {
-        'cookie': 'api_uid=CiHAnV3Y2TJpcQBDDIccAg==; _nano_fp=Xpd8n0TbX5Xql0dbXT_Qjj5XmVPAbYbWr~Kpl0zw;'
+        'cookie': '1'
+    },
+    {
+        'cookie': 'api_uid=CiTAEF3edV5ttQBCVUL2Ag==; _nano_fp=Xpd8n0CylpUbnpEjXo_FZXFesUrohzaiyN88gsvk;'
+    },
+    {
+        'cookie': 'api_uid=CiTAEF3edV5ttQBCVUL2Ag==; _nano_fp=Xpd8n0CylpUbnpEjXo_FZXFesUrohzaiyN88gsvk;'
     }
 ]
 goods = [
@@ -64,4 +70,16 @@ goods = [
         'sku_id': '395526999287', 'page_from': 0},
     {'goods_id': '40141221983', 'group_id': '20768621957', 'sku_id': '344568230433'},
     {'goods_id': '62834828681', 'group_id': '24402156324', 'sku_id': '405758272453'},
+
+
+    {'goods_id': '44759060624', 'group_id': '21544396617', 'sku_id': '356482141115'},
+    {'goods_id': '35222074634', 'group_id': '19970305373', 'sku_id': '331890136131'},
+    {'goods_id': '4884793268', 'group_id': '7958756039', 'sku_id': '123255064324'},
+    {'goods_id': '2957807916', 'group_id': '4509694215', 'sku_id': '63214622859'},
+    {'goods_id': '39516835583', 'group_id': '20715091639', 'sku_id': '343022292172'},
+    {'goods_id': '1974554259', 'group_id': '2824162003', 'sku_id': '396480145855'},
+    {'goods_id': '1022689586', 'group_id': '1354470649', 'sku_id': '189551703021'},
+    {'goods_id': '50558460461', 'group_id': '22480603887', 'sku_id': '388375558450'},
+    {'goods_id': '68526707749', 'group_id': '25291977914', 'sku_id': '420886867286'},
+    {'goods_id': '68526865569', 'group_id': '25291954796', 'sku_id': '420887217122'},
 ]

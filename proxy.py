@@ -10,6 +10,7 @@ import datetime
 getParamsUrl = "https://mobile.yangkeduo.com/order_checkout.html"
 createOrderUrl = "https://mobile.yangkeduo.com/proxy/api/order"
 prepayUrl = "https://mobile.yangkeduo.com/proxy/api/order/prepay"
+payStatusUrl = "https://mobile.yangkeduo.com/proxy/api/api/aristotle/pay_check"
 
 # 代理服务器
 proxyHost = "ip"
@@ -28,12 +29,14 @@ proxies = {
 
 orderList = []
 shop_index = 2
-goods_index = 2
+goods_index = 13
 stock_index = 0
+order_num = 0
 
 
 def on_prepay_request(order_sn, type):
     global stock_index
+    global order_num
     params = {
         'pdduid': stock[stock_index]['uid']
     }
@@ -77,19 +80,21 @@ def on_prepay_request(order_sn, type):
                          data=json.dumps(data))
     if(resp.status_code == 200):
         t = time.time()
+        # on_check_pay_status(order_sn)
         orderList.append(order_sn)
-        print('获取prepayId成功', len(orderList), resp.text)
-        stock_index += 1
-        if(stock_index >= len(stock)):
-            stock_index = 0
+        print('获取prepayId成功', len(orderList), resp.text, stock_index)
+
+        # stock_index += 1
+        # if(stock_index >= len(stock)):
+        # stock_index = 0
         before_get_params()
     else:
-        stock_index += 1
-        if(stock_index >= len(stock)):
-            stock_index = 0
+        # stock_index += 1
+        # if(stock_index >= len(stock)):
+            # stock_index = 0
         # print('成功订单数：'+len(orderList))
         print('获取prepayId失败:'+resp.text, stock_index, len(orderList))
-        # before_get_params()
+        before_get_params()
 
 
 def on_get_params_request(shop_cookie, user_id, PDDAccessToken, ua, params):
@@ -120,22 +125,46 @@ def on_create_order_request(accesstoken, cookie, params, payload):
     # print(resp.status_code)
     # print(resp.text)
     if(resp.status_code == 200):
-        # t = time.time()
+        t = time.time()
         # orderList.append(json.loads(resp.text)['order_sn'])
         # print(stock_index, len(orderList), json.loads(resp.text)
         #       ['order_sn'], int(round(t * 1000)))
         # stock_index += 1
         # if(stock_index >= len(stock)):
         #     stock_index = 0
-        on_prepay_request(json.loads(resp.text)['order_sn'], 2)
+        on_prepay_request(json.loads(resp.text)['order_sn'], 1)
     else:
-        stock_index += 1
-        if(stock_index >= len(stock)):
-            stock_index = 0
+        # stock_index += 1
+        # if(stock_index >= len(stock)):
+            # stock_index = 0
         # print('成功订单数：'+len(orderList))
         print('创建订单失败:'+resp.text, stock_index, len(orderList))
-        before_get_params()
+        # before_get_params()
     # before_create_order(resp.text)
+
+
+def on_check_pay_status(order_sn):
+    global order_num
+    params = {
+        "order_sn": order_sn,
+        "pdduid": stock[stock_index]['uid'],
+        "times": 1,
+        "success": 1,
+    }
+    headers = {
+        'cookie': 'pdd_user_id='+stock[stock_index]['uid']+';PDDAccessToken='+stock[stock_index]['token']+';api_uid=CiHAnV3Y2TJpcQBDDIccAg==; _nano_fp=Xpd8n0TbX5Xql0dbXT_Qjj5XmVPAbYbWr~Kpl0zw;SL_GWPT_Show_Hide_tmp=1; SL_wptGlobTipTmp=1; ua=Mozilla%2F5.0%20(iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X)%20AppleWebKit%2F604.1.38%20(KHTML%2C%20like%20Gecko)%20Version%2F11.0%20Mobile%2F15A372%20Safari%2F604.1; webp=1;chat_list_rec_list=chat_list_rec_list_eTJju7; msec=1800000;rec_list_personal=rec_list_personal_3eojge; rec_list_order_detail=rec_list_order_detail_cxKLTB;rec_list_index=rec_list_index_SWezUF;',
+        'accesstoken': stock[stock_index]['token']
+    }
+    resp = requests.get(payStatusUrl, params=params,
+                        headers=headers)
+    if(resp.status_code == 200 and json.loads(resp.text)['pay_status'] == 0):
+        order_num += 1
+        print(order_num)
+        # on_check_pay_status(order_sn)
+    else:
+        print('总共请求次数：', order_num)
+    # print(resp.status_code)
+    # print(resp.text)
 
 
 def before_get_params():
@@ -161,7 +190,9 @@ def before_create_order(text):
     params = {
         'pdduid': stock[stock_index]['uid']
     }
+    # print(text)
     dictObj = fix_html(text)
+
     anti_content = os.popen(f"node merge.js").read().strip()
     data = {
         "address_id": dictObj['store']['addressInfo']['addressId'],
@@ -198,7 +229,7 @@ def fix_html(text):
     list = text.split('rawData=')
     index = list[1].find(';')
     jsontext = list[1][0:index]
-    # print(list[1])
+    # print(jsontext)
     value = json.loads(jsontext)
     return value
 
